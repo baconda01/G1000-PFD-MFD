@@ -1,4 +1,6 @@
--- === Handle view state switching based on mode_fs and page ===
+--print("04_label_manager.lua loaded")
+
+-- === Handle view state switching based on mode_fs and page === ============================================
 function set_page(page_number)
     print("set_page called with page: " .. tostring(page_number))
 
@@ -18,7 +20,7 @@ end
 
 
 
---  === Update label visibility based on mode_fs ===
+--  === Update label visibility based on mode_fs === ======================================================
 function update_mode_labels()
     visible(label_pfd_only, mode_fs == "PFD_Only")
     visible(label_pfd, mode_fs == "PFD")
@@ -27,7 +29,7 @@ end
 
 
 
--- === Labels for the Mode Buttons ===
+-- === Labels for the Mode Buttons === ====================================================================
 label_pfd_only = txt_add(
     "PFD Only",
     "font:roboto_bold.ttf; size:60; color:white; halign:center;",
@@ -49,7 +51,7 @@ visible(label_pfd_only, false)
 visible(label_pfd, false)
 visible(label_Mfd, false)
 
--- === Step 1: Create the Global Label Elementses === ------------------------------------------------------------------------
+-- === Global Label Elementses === ====================================================================
 softkey_label_elements = {}  -- This holds 12 text label handles
 
 for i = 1, 12 do
@@ -59,7 +61,7 @@ for i = 1, 12 do
     table.insert(softkey_label_elements, label)
 end
 
--- === Step 2: Create the Label Update Function ===
+-- === Label Update Function === -----------------------------------
 function update_softkey_label_elements(label_set)
     for i = 1, 12 do
         local label_info = (label_set and label_set[i]) or {text = "", subdued = false}
@@ -73,7 +75,7 @@ function update_softkey_label_elements(label_set)
 end
 
 
--- Global Declarations... Sort of
+-- Global Label Declarations === ---------------------------------
 upper_labels = {"", "", "", "", "", "", "", "", "", "", "", ""}
 light = {"", "", "", "", "", "", "", "", "", "", "", ""}
 upper_softkey_labels = {}  -- Independent control per label

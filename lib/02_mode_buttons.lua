@@ -1,4 +1,4 @@
-print("02_mode_buttons.lua loaded")
+--print("02_mode_buttons.lua loaded")
 
 
 -- === PFD_Only Mode Button ===

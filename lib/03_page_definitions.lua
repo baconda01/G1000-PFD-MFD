@@ -1,4 +1,4 @@
-
+--print("03_page_definitions.lua loaded")
 
 -- Label overlay for PFD -----------------------------------------------------------------------------------------------------
 label_pages_pfd = {

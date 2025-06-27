@@ -1,6 +1,6 @@
-print("06_softkeys_mfd.lua loaded")
+--print("12_softkeys_mfd.lua loaded")
 
--- === Softkey 1 MFD === -----------------------------------------------------------------------
+-- === Softkey 1 MFD === ====================================================================
 button_add(
     "btn_arrow.png",
     "btn_arrow_pressed.png",
@@ -36,7 +36,7 @@ button_add(
     end
 )
 
--- === Softkey 2 === -----------------------------------------------------------------------
+-- === Softkey 2 === ====================================================================
 button_add(
     "btn_arrow.png",
     "btn_arrow_pressed.png",
@@ -73,7 +73,7 @@ button_add(
     end
 )
 
--- === Softkey 3 MFD === -----------------------------------------------------------------------
+-- === Softkey 3 MFD === ====================================================================
 button_add(
     "btn_arrow.png",
     "btn_arrow_pressed.png",
@@ -102,7 +102,7 @@ button_add(
     end
 )
 
--- === Softkey 4 MFD === -----------------------------------------------------------------
+-- === Softkey 4 MFD === ====================================================================
 button_add(
     "btn_arrow.png",
     "btn_arrow_pressed.png",
@@ -128,7 +128,22 @@ button_add(
     end
 )
 
--- === Softkey 6 MFD === -----------------------------------------------------------------
+-- === Softkey 5 MFD ====================================================================
+button_add(
+    "btn_arrow.png",
+    "btn_arrow_pressed.png",
+    1082,
+    1640,
+    200,
+    200,
+    function()
+
+        print("***Key 5***")
+        prt_console()
+    end
+)
+
+-- === Softkey 6 MFD === ====================================================================
 button_add(
     "btn_arrow.png",
     "btn_arrow_pressed.png",
@@ -156,7 +171,7 @@ button_add(
     end
 )
 
--- === Softkey 7 MFD === -----------------------------------------------------------------
+-- === Softkey 7 MFD === ====================================================================
 button_add(
     "btn_arrow.png",
     "btn_arrow_pressed.png",
@@ -182,7 +197,7 @@ button_add(
     end
 )
 
--- === Softkey 8 MFD === -----------------------------------------------------------------
+-- === Softkey 8 MFD === ====================================================================
 button_add(
     "btn_arrow.png",
     "btn_arrow_pressed.png",
@@ -198,6 +213,111 @@ button_add(
             set_page(11)
         end
         print("***Key 8***")
+        prt_console()
+    end
+)
+
+-- === Softkey 9 MFD === ====================================================================
+button_add(
+    "btn_arrow.png",
+    "btn_arrow_pressed.png",
+    1762,
+    1640,
+    200,
+    200,
+    function()
+
+        print("***Key 9***")
+        prt_console()
+    end
+)
+
+-- === Softkey 10 MFD === ====================================================================
+button_add(
+    "btn_arrow.png",
+    "btn_arrow_pressed.png",
+    1932,
+    1640,
+    200,
+    200,
+    function()
+        --highlight_softkey_flash(10) -- 🔵 This line triggers the flash
+
+        -- MFD - Page 6: Map Opr - Legend ----------------------
+        if mode_fs == "MFD" and MFD_current_page == 6 and
+                                   legend_select == 1 then
+            legend_select = 2
+
+        -- MFD - Page 1: Default MFD - Detail All, 3, 2, 1 ----------------------
+        elseif mode_fs == "MFD" and MFD_current_page == 6 and
+                                       legend_select == 2 then
+            legend_select = 1   
+            
+        elseif mode_fs == "MFD" and MFD_current_page == 1 and
+                                                 detail_select == 1 then
+            detail_select = 2
+            
+        elseif mode_fs == "MFD" and MFD_current_page == 1 and
+                                                 detail_select == 2 then
+            detail_select = 3
+            
+        elseif mode_fs == "MFD" and MFD_current_page == 1 and
+                                                 detail_select == 3 then
+            detail_select = 4
+
+        elseif mode_fs == "MFD" and MFD_current_page == 1 and
+                                                 detail_select == 4 then
+            detail_select = 1            
+
+  
+        end
+        print("***Key 10***")
+        prt_console()
+    end
+)
+
+-- === Softkey 11 MFD=== ====================================================================
+button_add(
+    "btn_arrow.png",
+    "btn_arrow_pressed.png",
+    2102,
+    1640,
+    200,
+    200,
+    function()
+        -- highlight_softkey_flash(11) -- 🔵 This line triggers the flash
+ 
+        if mode_fs == "MFD" and ((MFD_current_page == 2 and gal_rem_select == 1) or
+                                 (MFD_current_page == 3 and gal_rem_select == 1) or 
+                                  MFD_current_page == 4 or
+                                  MFD_current_page == 6) then 
+            set_page(1)
+
+        -- MFD - Page 4: System -----------------------------------    
+        elseif mode_fs == "MFD" and  (MFD_current_page == 11 or
+                                     (MFD_current_page == 2 and gal_rem_select == 2) or
+                                     (MFD_current_page == 3 and gal_rem_select == 2)) then           
+             system_select = 2
+            gal_rem_select = 1
+            set_page(4) 
+
+        end
+        print("***Key 11***")
+        prt_console()
+    end
+)   
+
+-- === Softkey 12 MFD === ====================================================================
+button_add(
+    "btn_arrow.png",
+    "btn_arrow_pressed.png",
+    2272,
+    1640,
+    200,
+    200,
+    function()
+
+        print("***Key 12***")
         prt_console()
     end
 )

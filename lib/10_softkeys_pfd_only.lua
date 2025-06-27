@@ -1,7 +1,7 @@
-print("04_softkeys_pfd_only.lua loaded")
+--print("10_softkeys_pfd_only.lua loaded")
 
 
--- === Softkey 1 PFD_Only === -----------------------------------------------------------------------
+-- === Softkey 1 PFD_Only === ====================================================================
 button_add(
     "btn_arrow.png",
     "btn_arrow_pressed.png",
@@ -10,7 +10,7 @@ button_add(
     200,
     200,
     function()
-        --highlight_softkey_flash(1) -- 🔵 This line triggers the flash
+        highlight_softkey_flash(1) -- 🔵 This line triggers the flash
 
 
         -- PFD_Only - Page 2: Engine --------------------------------
@@ -22,7 +22,7 @@ button_add(
             engine_select = 2
               lean_select = 1
             system_select = 1
-            set_page(2)
+            set_page(label_pages_pfd_only[2])
 
 
 
@@ -158,7 +158,7 @@ button_add(
     end
 )
 
--- === Softkey 2 === -------------------------------------------------------------------
+-- === Softkey 2 === ====================================================================
 button_add(
     "btn_arrow.png",
     "btn_arrow_pressed.png",
@@ -387,7 +387,7 @@ button_add(
     end
 )
 
--- === Softkey 3 PFD_Only === ------------------------------------------------------------------------
+-- === Softkey 3 PFD_Only === ====================================================================
 button_add(
     "btn_arrow.png",
     "btn_arrow_pressed.png",
@@ -578,7 +578,7 @@ button_add(
     end
 )
 
--- === Softkey 4 PFD_Only ===-----------------------------------------------------------------
+-- === Softkey 4 PFD_Only ====================================================================
 button_add(
     "btn_arrow.png",
     "btn_arrow_pressed.png",
@@ -630,7 +630,7 @@ button_add(
     end
 )
 
--- === Softkey 5 PFD_Only === -----------------------------------------------------------------
+-- === Softkey 5 PFD_Only === ====================================================================
 button_add(
     "btn_arrow.png",
     "btn_arrow_pressed.png",
@@ -678,7 +678,7 @@ button_add(
     end
 )
 
--- === Softkey 6 PFD_Only === -----------------------------------------------------------------
+-- === Softkey 6 PFD_Only === ====================================================================
 button_add(
     "btn_arrow.png",
     "btn_arrow_pressed.png",
@@ -729,7 +729,7 @@ button_add(
     end
 )
 
--- === Softkey 7 PFD_Only === -----------------------------------------------------------------
+-- === Softkey 7 PFD_Only === ====================================================================
 button_add(
     "btn_arrow.png",
     "btn_arrow_pressed.png",
@@ -753,7 +753,7 @@ button_add(
     end
 )
 
--- === Softkey 8 PFD_Only === -----------------------------------------------------------------
+-- === Softkey 8 PFD_Only === ====================================================================
 button_add(
     "btn_arrow.png",
     "btn_arrow_pressed.png",
@@ -788,6 +788,129 @@ button_add(
 
         end
         print("***Key 8***")
+        prt_console()
+    end
+)
+
+-- === Softkey 9 PFD_Only === ====================================================================
+button_add(
+    "btn_arrow.png",
+    "btn_arrow_pressed.png",
+    1762,
+    1640,
+    200,
+    200,
+    function()
+        --highlight_softkey_flash(9) -- 🔵 This line triggers the flash
+
+        -- PFD_Only - Page 1: PFD Only Default ----------------------
+            if mode_fs == "PFD_Only" and PFD_Only_current_page == 16 then
+            set_page(1)
+
+        -- PFD_Only - Page 15: Alt Units ----------------------    
+        elseif mode_fs == "PFD_Only" and PFD_Only_current_page == 12 then
+            set_page(15)
+  
+        elseif mode_fs == "PFD_Only" and PFD_Only_current_page == 15 and 
+                                         alt_uniits_in_select == 2 then
+             alt_uniits_in_select = 1
+            alt_uniits_hpa_select = 2    
+
+        end
+        print("***Key 9***")
+        prt_console()
+    end
+)
+
+-- === Softkey 10 PFD_Only === ====================================================================
+button_add(
+    "btn_arrow.png",
+    "btn_arrow_pressed.png",
+    1932,
+    1640,
+    200,
+    200,
+    function()
+        --highlight_softkey_flash(10) -- 🔵 This line triggers the flash
+
+    -- PFD_Only - Page 1: PFD Only Default  ----------------------    
+        if mode_fs == "PFD_Only" and PFD_Only_current_page == 12 then           
+            set_page(1)  
+
+        end
+        print("***Key 10***")
+        prt_console()
+    end
+)
+
+-- === Softkey 11 PFD_Only=== ====================================================================
+button_add(
+    "btn_arrow.png",
+    "btn_arrow_pressed.png",
+    2102,
+    1640,
+    200,
+    200,
+    function()
+        -- highlight_softkey_flash(11) -- 🔵 This line triggers the flash
+ 
+        -- PFD_Only - Back - Page 1: PFD Only Default ----------------------    
+            if mode_fs == "PFD_Only" and  ((PFD_Only_current_page == 2 and gal_rem_select == 1) or
+                                           (PFD_Only_current_page == 3 and gal_rem_select == 1) or
+                                            PFD_Only_current_page == 4 or
+                                            PFD_Only_current_page == 5 or 
+                                            PFD_Only_current_page == 6 or
+                                            PFD_Only_current_page == 10 or
+                                            PFD_Only_current_page == 12 or
+                                            PFD_Only_current_page == 16) then
+            set_page(1)
+            
+        -- PFD_Only - Page 4: System -----------------------------------    
+        elseif mode_fs == "PFD_Only" and  (PFD_Only_current_page == 11 or
+                                          (PFD_Only_current_page == 2 and gal_rem_select == 2) or  
+                                          (PFD_Only_current_page == 3 and gal_rem_select == 2)) then           
+             system_select = 2
+            gal_rem_select = 1
+            set_page(4) 
+
+        -- PFD_Only - Back - Page 6: MAP/HSI - Sub ----------------------    
+        elseif mode_fs == "PFD_Only" and  PFD_Only_current_page == 7 and
+                                                map_off_select == 2 then           
+            set_page(6)    
+            
+        -- PFD_Only - Page 10: MAP/HSI - On -----------------------------    
+        elseif mode_fs == "PFD_Only" and  PFD_Only_current_page == 7 and
+                                             (insert_map_select == 2 or 
+                                                 HSI_map_select == 2) then       
+            set_page(10)              
+
+        -- PFD_Only - Page 12: PFD Opt --------------------------------    
+        elseif mode_fs == "PFD_Only" and  PFD_Only_current_page == 13 or
+                                         PFD_Only_current_page == 14 or
+                                         PFD_Only_current_page == 15 then           
+            set_page(12)  
+
+        -- PFD_Only - Page 16: XPDR ----------------------------------    
+        elseif mode_fs == "PFD_Only" and  PFD_Only_current_page == 8 then                                      
+            set_page(16)  
+
+        end
+        print("***Key 11***")
+        prt_console()
+    end
+)
+
+-- === Softkey 12 PFD_Only === ====================================================================
+button_add(
+    "btn_arrow.png",
+    "btn_arrow_pressed.png",
+    2272,
+    1640,
+    200,
+    200,
+    function()
+
+        print("***Key 12***")
         prt_console()
     end
 )
