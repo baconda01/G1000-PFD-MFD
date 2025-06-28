@@ -219,24 +219,24 @@ softkey_label_top = {}
 softkey_label_side = {}
 
 for i = 1, 12 do
-    local x = 420 + (i - 1.1) * 170  -- Same X as label
+    local x = 410 + (i - 1) * 170  -- Same X as label
     local y_top = 1520             -- Slightly above the label
-    local x_2 = 420 + (i - 1) * 170  -- Same X as label
+    local x_2 = 410 + (i - 1) * 170  -- Same X as label
     local y_top_2 = 1521             -- Slightly above the label
     local y_side = 1560            -- Same Y as the label
 
     -- Frame Top: underscores
     local top_label = txt_add(
         frame_top[i],
-        "font:roboto_bold.ttf; size:65; color:white; halign:center;",
-        x, y_top, 160, 70
+        "font:roboto_bold.ttf; size:63; color:white; halign:center;",
+        x, y_top, 200, 90
     )
     table.insert(softkey_label_top, top_label)
     
     local top_label = txt_add(
         frame_top[i],
-        "font:roboto_bold.ttf; size:65; color:white; halign:center;",
-        x_2, y_top_2, 200, 70
+        "font:roboto_bold.ttf; size:64; color:white; halign:center;",
+        x_2, y_top_2, 200, 90
     )
     table.insert(softkey_label_top, top_label)
 
