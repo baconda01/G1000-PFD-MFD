@@ -4,7 +4,7 @@
 -- === Softkey 1 PFD_Only === ====================================================================
 function handle_softkey_1_pfd_only()
 
-    print("=== Softkey 1 PFD_Only")
+    --print("=== Softkey 1 PFD_Only")
     --highlight_softkey_flash(1) -- 🔵 This line triggers the flash
 
 
