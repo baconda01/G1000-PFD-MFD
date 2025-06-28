@@ -79,7 +79,7 @@ prt_console()
 
 
 
-            engine_select = 2
-              lean_select = 1
-            system_select = 1
+-- Declare global button handle
+softkey_btn_1 = nil
+
 

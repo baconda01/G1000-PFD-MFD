@@ -1,116 +1,91 @@
 --print("12_softkeys_mfd.lua loaded")
 
+
 -- === Softkey 1 MFD === ====================================================================
-button_add(
-    "btn_arrow.png",
-    "btn_arrow_pressed.png",
-    400,
-    1640,
-    200,
-    200,
-    function()
-        --highlight_softkey_flash(1) -- 🔵 This line triggers the flash
+function handle_softkey_1_mfd()
 
-        -- MFD - Page 2: Engine --------------------------------
-        if mode_fs == "MFD" and (MFD_current_page == 1 or
-                                 MFD_current_page == 3 or    
-                                 MFD_current_page == 4 or 
-                                 MFD_current_page == 5 or
-                                 MFD_current_page == 11) then
-            engine_select = 2
-              lean_select = 1
-            system_select = 1
-            set_page(2)
+    print("=== Softkey 1 MFD REALLY!")
+    --highlight_softkey_flash(1) -- 🔵 This line triggers the flash
 
-        -- MFD - Page 6: Map Opr - Traffic ----------------------
-        elseif mode_fs == "MFD" and MFD_current_page == 6 and
-                                      traffic_select == 1 then
-            traffic_select = 2
+    -- MFD - Page 2: Engine --------------------------------
+    if mode_fs == "MFD" and MFD_current_page == 1 or
+                                MFD_current_page == 3 or    
+                                MFD_current_page == 4 or 
+                                MFD_current_page == 5 or
+                                MFD_current_page == 11 then
+        engine_select = 2
+            lean_select = 1
+        system_select = 1
+        set_page(2)
 
-        elseif mode_fs == "MFD" and MFD_current_page == 6 and
-                                      traffic_select == 2 then
-            traffic_select = 1
-        end
-        print("***Key 1 ***")
-        prt_console()
+    -- MFD - Page 6: Map Opr - Traffic ----------------------
+    elseif mode_fs == "MFD" and MFD_current_page == 6 and
+                                    traffic_select == 1 then
+        traffic_select = 2
+
+    elseif mode_fs == "MFD" and MFD_current_page == 6 and
+                                    traffic_select == 2 then
+        traffic_select = 1
     end
-)
+    print("***Key 1 ***")
+    prt_console()
+end
+
 
 -- === Softkey 2 === ====================================================================
-button_add(
-    "btn_arrow.png",
-    "btn_arrow_pressed.png",
-    572,
-    1640,
-    200,
-    200,
-    function()
-        --highlight_softkey_flash(2) -- 🔵 This line triggers the flash
+function handle_softkey_2_mfd()
+    --highlight_softkey_flash(2) -- 🔵 This line triggers the flash
 
-        -- MFD - Page 3: Lean - Assist OFF----------------------*
-            if mode_fs == "MFD" and ((MFD_current_page == 2 or
-                                          MFD_current_page == 4 or
-                                          MFD_current_page == 11) and
-                                                  assist_select == 1) then
-            engine_select = 1
-              lean_select = 2
-            system_select = 1
-            set_page(3)
+    -- MFD - Page 3: Lean - Assist OFF----------------------*
+        if mode_fs == "MFD" and ((MFD_current_page == 2 or
+                                        MFD_current_page == 4 or
+                                        MFD_current_page == 11) and
+                                                assist_select == 1) then
+        engine_select = 1
+            lean_select = 2
+        system_select = 1
+        set_page(3)
 
-        -- MFD - Page 5: Lean - Assist ON----------------------
-        elseif mode_fs == "MFD" and ((MFD_current_page == 2 or
-                                          MFD_current_page == 4 or
-                                          MFD_current_page == 11) and
-                                                  assist_select == 2) then
-            engine_select = 1
-              lean_select = 2
-            system_select = 1
-            set_page(5)
+    -- MFD - Page 5: Lean - Assist ON----------------------
+    elseif mode_fs == "MFD" and ((MFD_current_page == 2 or
+                                        MFD_current_page == 4 or
+                                        MFD_current_page == 11) and
+                                                assist_select == 2) then
+        engine_select = 1
+            lean_select = 2
+        system_select = 1
+        set_page(5)
 
-        end
-        print("***Key 2***")
-        prt_console()
     end
-)
+    print("***Key 2***")
+    prt_console()
+end
+
 
 -- === Softkey 3 MFD === ====================================================================
-button_add(
-    "btn_arrow.png",
-    "btn_arrow_pressed.png",
-    742,
-    1640,
-    200,
-    200,
-    function()
+function handle_softkey_3_mfd()
 
-       -- highlight_softkey_flash(3) -- 🔵 This line triggers the flash
-       
-        if mode_fs == "MFD" and (MFD_current_page == 2 or
-                                 MFD_current_page == 3 or
-                                 MFD_current_page == 5) then 
-            engine_select = 1
-              lean_select = 1
-            system_select = 2
-            set_page(4)
-        
-        elseif mode_fs == "MFD" and MFD_current_page == 1 then
-            set_page(6)
+    -- highlight_softkey_flash(3) -- 🔵 This line triggers the flash
+    
+    if mode_fs == "MFD" and (MFD_current_page == 2 or
+                                MFD_current_page == 3 or
+                                MFD_current_page == 5) then 
+        engine_select = 1
+            lean_select = 1
+        system_select = 2
+        set_page(4)
+    
+    elseif mode_fs == "MFD" and MFD_current_page == 1 then
+        set_page(6)
 
-        end
-        print("***Key 3***")
-        prt_console()
     end
-)
+    print("***Key 3***")
+    prt_console()
+end
+
 
 -- === Softkey 4 MFD === ====================================================================
-button_add(
-    "btn_arrow.png",
-    "btn_arrow_pressed.png",
-    912,
-    1640,
-    200,
-    200,
-    function()
+function handle_softkey_4_mfd()
         --highlight_softkey_flash(4) -- 🔵 This line triggers the flash
        
         -- MFD - Page 6: Map Opr - Topo ----------------------
@@ -126,32 +101,18 @@ button_add(
         print("***Key 4***")
         prt_console()
     end
-)
+
 
 -- === Softkey 5 MFD ====================================================================
-button_add(
-    "btn_arrow.png",
-    "btn_arrow_pressed.png",
-    1082,
-    1640,
-    200,
-    200,
-    function()
+function handle_softkey_5_mfd()
 
         print("***Key 5***")
         prt_console()
     end
-)
+
 
 -- === Softkey 6 MFD === ====================================================================
-button_add(
-    "btn_arrow.png",
-    "btn_arrow_pressed.png",
-    1252,
-    1640,
-    200,
-    200,
-    function()
+function handle_softkey_6_mfd()
         --highlight_softkey_flash(6) -- 🔵 This line triggers the flash
 
         -- MFD_Only - Page 3: Lean - Assist ON ----------------------*    
@@ -169,17 +130,10 @@ button_add(
         print("***Key 6***")
         prt_console()
     end
-)
+
 
 -- === Softkey 7 MFD === ====================================================================
-button_add(
-    "btn_arrow.png",
-    "btn_arrow_pressed.png",
-    1422,
-    1640,
-    200,
-    200,
-    function()
+function handle_softkey_7_mfd()
         --highlight_softkey_flash(7) -- 🔵 This line triggers the flash
 
 -- MFD - Page 6: Map Opt - NEXRAD 
@@ -195,17 +149,10 @@ button_add(
         print("***Key 7***")
         prt_console()
     end
-)
+
 
 -- === Softkey 8 MFD === ====================================================================
-button_add(
-    "btn_arrow.png",
-    "btn_arrow_pressed.png",
-    1592,
-    1640,
-    200,
-    200,
-    function()
+function handle_softkey_8_mfd()
         --highlight_softkey_flash(8) -- 🔵 This line triggers the flash
 
         if mode_fs == "MFD" and MFD_current_page == 4 then
@@ -215,32 +162,18 @@ button_add(
         print("***Key 8***")
         prt_console()
     end
-)
+
 
 -- === Softkey 9 MFD === ====================================================================
-button_add(
-    "btn_arrow.png",
-    "btn_arrow_pressed.png",
-    1762,
-    1640,
-    200,
-    200,
-    function()
+function handle_softkey_9_mfd()
 
         print("***Key 9***")
         prt_console()
     end
-)
+
 
 -- === Softkey 10 MFD === ====================================================================
-button_add(
-    "btn_arrow.png",
-    "btn_arrow_pressed.png",
-    1932,
-    1640,
-    200,
-    200,
-    function()
+function handle_softkey_10_mfd()
         --highlight_softkey_flash(10) -- 🔵 This line triggers the flash
 
         -- MFD - Page 6: Map Opr - Legend ----------------------
@@ -274,17 +207,10 @@ button_add(
         print("***Key 10***")
         prt_console()
     end
-)
+
 
 -- === Softkey 11 MFD=== ====================================================================
-button_add(
-    "btn_arrow.png",
-    "btn_arrow_pressed.png",
-    2102,
-    1640,
-    200,
-    200,
-    function()
+function handle_softkey_11_mfd()
         -- highlight_softkey_flash(11) -- 🔵 This line triggers the flash
  
         if mode_fs == "MFD" and ((MFD_current_page == 2 and gal_rem_select == 1) or
@@ -305,19 +231,14 @@ button_add(
         print("***Key 11***")
         prt_console()
     end
-)   
+
 
 -- === Softkey 12 MFD === ====================================================================
-button_add(
-    "btn_arrow.png",
-    "btn_arrow_pressed.png",
-    2272,
-    1640,
-    200,
-    200,
-    function()
+function handle_softkey_12_mfd()
 
         print("***Key 12***")
         prt_console()
     end
-)
+
+
+

@@ -101,4 +101,6 @@ function draw_softkeys()
     else
         light[10] = ""
     end
+    print("draw_softkeys")
+
 end
