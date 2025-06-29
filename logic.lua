@@ -67,13 +67,13 @@ function prt_console()
         "mode_fs: " .. tostring(mode_fs),
         "PFD Current Page: "      .. tostring(PFD_current_page),
         "MFD Current Page: "      .. tostring(MFD_current_page), 
-        "PFD_Only Current Page: "   .. tostring(PFD_Only_current_page)
+        "PFD_Only Current Page: "   .. tostring(PFD_Only_current_page),
 
  --       "Type of rect_add: " .. tostring(type(rect_add))
 
- --       "   engine_select: "      .. tostring(engine_select),
- --       "   lean_select: "      .. tostring(lean_select),
- --       "   system_select: "      .. tostring(system_select)
+        "   engine_select: "      .. tostring(engine_select),
+        "   lean_select: "      .. tostring(lean_select),
+        "   system_select: "      .. tostring(system_select)
     )
     
     print("----------------------")
@@ -97,18 +97,24 @@ function set_page(page_number)
 
     if mode_fs == "PFD_Only" then
         PFD_Only_current_page = page_number
+        update_light_logic()
+        draw_lights()        
         update_softkey_label_elements(label_pages_pfd_only[page_number])
         --draw_pfd_only_page(page_number)
 
     elseif mode_fs == "PFD" then
         PFD_current_page = page_number
+        update_light_logic()
+        draw_lights()        
         update_softkey_label_elements(label_pages_pfd[page_number])
 
     elseif mode_fs == "MFD" then
         MFD_current_page = page_number
+        update_light_logic()
+        draw_lights()
         update_softkey_label_elements(label_pages_mfd[page_number])
-    
     end
+
     --print("=== set_page")
 end
 
@@ -149,102 +155,12 @@ label_Mfd = txt_add(
 )
 
 -- Set initial visibility (PFD_Only is shown by default)
-visible(label_pfd_only, false)
+visible(label_pfd_only, true)
 visible(label_pfd, false)
 visible(label_Mfd, false)
 
 
--- === Global Label Elementses === ====================================================================
-softkey_label_elements = {}  -- This holds 12 text label handles
-
-for i = 1, 12 do
-    local x = 420 + (i - 1) * 170   -- Adjust X to center over softkeys
-    local y = 1580                -- Adjust Y as needed to hover just above buttons
-
-    local label = txt_add("", "font:roboto_bold.ttf; size:45; color:white; halign:center;", x, y, 160, 40)
-    table.insert(softkey_label_elements, label)
-        
-    --print("=== softkey_label_elements")
-end
-
--- === Label Update Function === -----------------------------------
-function update_softkey_label_elements(label_set)
-    for i = 1, 12 do
-        local label_info = (label_set and label_set[i]) or {text = "", subdued = false}
-        local text = label_info.text or ""
-        local color = label_info.color or (label_info.subdued and "#FF333333" or "white")
-        local style = "font:roboto_bold.ttf; size:45; color:" .. color .. "; halign:center;"
-
-        txt_style(softkey_label_elements[i], style)
-        txt_set(softkey_label_elements[i], text)
-    end
-    --print("=== update_softkey_label_elements")
-end
 
 
--- --[[
--- Global Label Declarations === ---------------------------------
-upper_labels = {"", "", "", "", "", "", "", "", "", "", "", ""}
-light = {"", "", "", "", "", "", "", "", "", "", "", ""}
-upper_softkey_labels = {}  -- Independent control per label
-frame_side = {"|",
-              "|", 
-              "|", 
-              "|", 
-              "|", 
-              "|", 
-              "|", 
-              "|", 
-              "|", 
-              "|", 
-              "|", 
-              "|          |"
-            }
-frame_top = {"________",
-             "________", 
-             "________", 
-             "________",
-             "________",
-             "________", 
-             "________", 
-             "________", 
-             "________",  
-             "________", 
-             "________",  
-             "________"
-            }
--- ]]
 
-softkey_label_top = {}
-softkey_label_side = {}
 
-for i = 1, 12 do
-    local x = 410 + (i - 1) * 170  -- Same X as label
-    local y_top = 1520             -- Slightly above the label
-    local x_2 = 410 + (i - 1) * 170  -- Same X as label
-    local y_top_2 = 1521             -- Slightly above the label
-    local y_side = 1560            -- Same Y as the label
-
-    -- Frame Top: underscores
-    local top_label = txt_add(
-        frame_top[i],
-        "font:roboto_bold.ttf; size:63; color:white; halign:center;",
-        x, y_top, 200, 90
-    )
-    table.insert(softkey_label_top, top_label)
-    
-    local top_label = txt_add(
-        frame_top[i],
-        "font:roboto_bold.ttf; size:64; color:white; halign:center;",
-        x_2, y_top_2, 200, 90
-    )
-    table.insert(softkey_label_top, top_label)
-
-    -- Frame Side: vertical bars (if you want left/right edges)
-    local side_label = txt_add(
-        frame_side[i],
-        "font:roboto_bold.ttf; size:90; color:white; halign:left;",
-        x, y_side, 200, 90
-    )
-    table.insert(softkey_label_side, side_label)
-end

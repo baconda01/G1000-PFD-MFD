@@ -1,8 +1,6 @@
---print("05_label_lights.lua loaded")
-
 -- === Label LIGHTS === ====================================================================
 
-function update_light_logic()
+function draw_lights()
 
     -- Label Light 1 ------------------------------------------------------------------------------
     if (engine_select == 2 and (PFD_Only_current_page == 2 or                                       -- PFD_Only - Page 2: Engine  - Engine   - LIGHT
@@ -11,10 +9,10 @@ function update_light_logic()
        ((pathways_select == 2 or pathways_select == 4) and PFD_Only_current_page == 13) or          -- PFD_Only - Page 13: SVT    - Pathways - LIGHT
        (traffic_select == 2 and MFD_current_page == 6) then                                         -- MFD      - Page 6: MAP/HSI - Traffic  - LIGHT
         light[1] = "______"
-        print("=== draw_softkeys_ON")
+        --print("=== draw_lights")
     else
         light[1] = ""
-        print("=== draw_softkeys_OFF")
+        --print("=== draw_lights")
     end
 
     -- Label Light 2 ------------------------------------------------------------------------------
@@ -26,10 +24,10 @@ function update_light_logic()
         (terrain_select == 2 and PFD_Only_current_page == 13) or                                    -- PFD_Only - Page 13: SVT   - Terrain     - LIGHT
         (wind_off == 2 and PFD_Only_current_page == 14) then                                        -- PFD_Only - Page 14: Wind  - Off         - LIGHT
         light[2] = "______"
-        print("=== draw_softkeys_ON")
+       -- print("=== draw_lights")
     else
         light[2] = ""
-        print("=== draw_softkeys_OFF")
+       -- print("=== draw_lights")
     end
 
     -- Label Light 3 ------------------------------------------------------------------------------
@@ -43,10 +41,10 @@ function update_light_logic()
         (standby_select == 2 and PFD_Only_current_page == 16) or                                    -- PFD_Only - Page 16: XPDR    - Standby  - LIGHT
         (wind_option_1 == 2 and PFD_Only_current_page == 14) then                                   -- PFD_Only - Page 14: Wind    - Option 2 - LIGHT
         light[3] = "______"
-        print("=== draw_softkeys_ON")
+      --  print("=== draw_lights")
     else
         light[3] = ""
-        print("=== draw_softkeys_OFF")
+      --  print("=== draw_lights")
     end
     
     -- Label Light 4 ------------------------------------------------------------------------------  
@@ -55,10 +53,10 @@ function update_light_logic()
         (wind_option_2 == 2 and PFD_Only_current_page == 14) or                                     -- PFD_Only - Page 14: Wind    - Off  - LIGHT
         (topo_select == 2 and MFD_current_page == 6) then                                           -- MFD      - Page 6: MAP/HSI  - Topo - LIGHT
         light[4] = "______"
-        print("=== draw_softkeys_ON")
+      --  print("=== draw_lights")
     else
         light[4] = ""
-        print("=== draw_softkeys_OFF")
+      --  print("=== draw_lights")
     end
 
     -- Label Light 5 ------------------------------------------------------------------------------
@@ -66,10 +64,10 @@ function update_light_logic()
         (alt_select == 2 and PFD_Only_current_page == 16) or                                        -- PFD_Only - Page 16: XPDR    - Alt      - LIGHT
         (wind_option_3 == 2 and PFD_Only_current_page == 14) then                                   -- PFD_Only - Page 14: Wind    - Option 1 - LIGHT
         light[5] = "______"
-        print("=== draw_softkeys_ON")
+      --  print("=== draw_lights")
     else
         light[5] = ""
-        print("=== draw_softkeys_OFF")
+     --   print("=== draw_lights")
     end
 
     -- Label Light 6 ------------------------------------------------------------------------------
@@ -111,35 +109,17 @@ function update_light_logic()
     else
         light[10] = ""
     end
-    print("draw_softkeys")
+  --  print("draw_lights")
 
 end
 
--- === Label Light Elements Setup ===
 label_light_elements = {}
-label_light_elements2 = {}  -- Second row for glow effect
 
 for i = 1, 12 do
     local x = 420 + (i - 1) * 170
-    local y1 = 1580   -- First row
-    local y2 = 1585   -- Second row slightly lower
-
-    local light_txt_1 = txt_add("", "font:roboto_bold.ttf; size:60; color:#00FF88; halign:center;", x, y1, 160, 60)
-    local light_txt_2 = txt_add("", "font:roboto_bold.ttf; size:60; color:#00FF88; halign:center;", x, y2, 160, 60)
-
-    table.insert(label_light_elements, light_txt_1)
-    table.insert(label_light_elements2, light_txt_2)
+    local y = 1600  -- Positioned just below the text label
+    local light_txt = txt_add("", "font:roboto_bold.ttf; size:30; color:#00FF88; halign:center;", x, y, 160, 40)
+    table.insert(label_light_elements, light_txt)
 end
 
-
--- === Label Light Draw Function ===
-function draw_lights()
-    for i = 1, 12 do
-        local text = light[i] or ""
-        txt_set(label_light_elements[i], text)
-        txt_set(label_light_elements2[i], text)  -- same string, stacked lower
-    end
-end
-
-
-
+txt_set(label_light_elements[i], label_info.light or "")
