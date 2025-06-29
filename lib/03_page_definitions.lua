@@ -1,5 +1,53 @@
 --print("03_page_definitions.lua loaded")
 
+-- Forward declarations
+function draw_page_PFD_Only_1() end
+function draw_page_PFD_Only_2() end
+-- ... up to 12
+
+-- === Dispatch Table === ======================================================================================
+
+PFD_Only_page_drawers = {
+    [1]  = draw_page_PFD_Only_1,
+    [2]  = draw_page_PFD_Only_2,
+    [3]  = draw_page_PFD_Only_3,
+    [4]  = draw_page_PFD_Only_4,
+    [5]  = draw_page_PFD_Only_5,
+    [6]  = draw_page_PFD_Only_6,
+    [7]  = draw_page_PFD_Only_7,
+    [8]  = draw_page_PFD_Only_8,
+    [9]  = draw_page_PFD_Only_9,
+    [10] = draw_page_PFD_Only_10,
+    [11] = draw_page_PFD_Only_11,
+    [12] = draw_page_PFD_Only_12,
+}
+
+-- Dispatch Function
+function draw_page_PFD_Only()
+    local func = PFD_Only_page_drawers[PFD_Only_current_page]
+    if func then
+        func()
+    else
+        print("⚠️ Unknown page:", PFD_Only_current_page)
+    end
+end
+
+-- === Page Draw Functions for PFD_Only Mode === ===============================================================
+
+function draw_page_PFD_Only_1()
+    print("🟢 draw_page_PFD_Only_1() was called")
+    -- TODO: Add visual drawing code
+end
+
+function draw_page_PFD_Only_2()
+    print("🟢 draw_page_PFD_Only_2() was called")
+    -- TODO: Add visual drawing code
+end
+
+-- Repeat up to draw_page_PFD_Only_12()
+
+
+
 -- Label overlay for PFD -----------------------------------------------------------------------------------------------------
 label_pages_pfd = {
     -- PFD - Page 1: Default PFD - Sub

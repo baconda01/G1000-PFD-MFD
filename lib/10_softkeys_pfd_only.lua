@@ -2,10 +2,34 @@
 
 
 -- === Softkey 1 PFD_Only === ====================================================================
+
+-- === Softkey 1 handler for PFD_Only mode ===
+softkey_handlers.PFD_Only[1] = function()
+    if PFD_Only_current_page == 1 or
+       PFD_Only_current_page == 3 or
+       PFD_Only_current_page == 4 or
+       PFD_Only_current_page == 5 or
+       PFD_Only_current_page == 11 then
+
+        engine_select = 2
+        lean_select = 1
+        system_select = 1
+        set_page(2)
+    else
+        print("Softkey 1 pressed, but page not valid.")
+    end
+end
+
+--[[
+
+
 function handle_softkey_1_pfd_only()
 
     --print("=== Softkey 1 PFD_Only")
-    
+
+
+
+
     -- PFD_Only - Page 2: Engine --------------------------------
     if mode_fs == "PFD_Only" and (PFD_Only_current_page == 1 or
                                     PFD_Only_current_page == 3 or
@@ -143,10 +167,12 @@ function handle_softkey_1_pfd_only()
 
             
     end
+
+
     print("***Key 1***")
     prt_console()
 end
-
+]]
 
 -- === Softkey 2 === ====================================================================
 function handle_softkey_2_pfd_only()
