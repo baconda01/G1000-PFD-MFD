@@ -163,4 +163,25 @@ visible(label_Mfd, false)
 
 
 
+-- === Lablel Flash === =================================================================================
+function highlight_softkey_flash(index)
+    if softkey_label_elements[index] == nil then return end
+
+    -- Change label color to blue
+    txt_style(softkey_label_elements[index], "font:roboto_bold.ttf; size:45; color:#33ccff; halign:center;")
+
+    -- Cancel any previous timer
+    if highlight_timer then
+        timer_stop(highlight_timer)
+    end
+
+    -- Revert to white after 250ms
+    highlight_timer = timer_start(250, function()
+        txt_style(softkey_label_elements[index], "font:roboto_bold.ttf; size:45; color:white; halign:center;")
+    end)
+end
+
+
+
+
 

@@ -5,9 +5,7 @@
 function handle_softkey_1_pfd_only()
 
     --print("=== Softkey 1 PFD_Only")
-    --highlight_softkey_flash(1) -- 🔵 This line triggers the flash
-
-
+    
     -- PFD_Only - Page 2: Engine --------------------------------
     if mode_fs == "PFD_Only" and (PFD_Only_current_page == 1 or
                                     PFD_Only_current_page == 3 or
@@ -152,8 +150,6 @@ end
 
 -- === Softkey 2 === ====================================================================
 function handle_softkey_2_pfd_only()
-    --highlight_softkey_flash(2) -- 🔵 This line triggers the flash
-
 
     -- PFD_Only - Page 3: Lean - Assist OFF----------------------*
         if mode_fs == "PFD_Only" and ((PFD_Only_current_page == 2 or
@@ -375,8 +371,6 @@ end
 -- === Softkey 3 PFD_Only === ====================================================================
 function handle_softkey_3_pfd_only()
 
-    -- highlight_softkey_flash(3) -- 🔵 This line triggers the flash
-
     -- PFD_Only - Page 4: System ----------------------    
     if mode_fs == "PFD_Only" and PFD_Only_current_page == 2 or
                                     PFD_Only_current_page == 5 or
@@ -559,8 +553,6 @@ end
 -- === Softkey 4 PFD_Only ====================================================================
 function handle_softkey_4_pfd_only()
 
-        --highlight_softkey_flash(4) -- 🔵 This line triggers the flash
-       
         -- PFD_Only - Page 8: Code -------------------------------------
             if mode_fs == "PFD_Only" and PFD_Only_current_page == 8 then
             handle_code_entry()
@@ -605,8 +597,6 @@ function handle_softkey_4_pfd_only()
 -- === Softkey 5 PFD_Only === ====================================================================
 function handle_softkey_5_pfd_only()
 
-        --highlight_softkey_flash(5) -- 🔵 This line triggers the flash
-
         -- PFD_Only - Page 8: Code ------------------------------
             if mode_fs == "PFD_Only" and PFD_Only_current_page == 8 then
             handle_code_entry() 
@@ -646,8 +636,6 @@ function handle_softkey_5_pfd_only()
 
 -- === Softkey 6 PFD_Only === ====================================================================
 function handle_softkey_6_pfd_only()
-
-        --highlight_softkey_flash(6) -- 🔵 This line triggers the flash
 
 --  PFD_Only ------------------------------------------------------------------
         -- PFD_Only - Page 3: Lean - Assist OFF ----------------------*    
@@ -692,8 +680,6 @@ function handle_softkey_6_pfd_only()
 -- === Softkey 7 PFD_Only === ====================================================================
 function handle_softkey_7_pfd_only()
 
-        --highlight_softkey_flash(7) -- 🔵 This line triggers the flash
-
         -- PFD_Only - Page 8: Code ------------------------------
             if mode_fs == "PFD_Only" and PFD_Only_current_page == 16 then
             vfr_select = 2
@@ -709,8 +695,6 @@ function handle_softkey_7_pfd_only()
 
 -- === Softkey 8 PFD_Only === ====================================================================
 function handle_softkey_8_pfd_only()
-
-        --highlight_softkey_flash(8) -- 🔵 This line triggers the flash
 
         -- PFD_Only - Page 8: Code ------------------------------
             if mode_fs == "PFD_Only" and PFD_Only_current_page == 16 then
@@ -743,8 +727,6 @@ function handle_softkey_8_pfd_only()
 -- === Softkey 9 PFD_Only === ====================================================================
 function handle_softkey_9_pfd_only()
 
-        --highlight_softkey_flash(9) -- 🔵 This line triggers the flash
-
         -- PFD_Only - Page 1: PFD Only Default ----------------------
             if mode_fs == "PFD_Only" and PFD_Only_current_page == 16 then
             set_page(1)
@@ -767,8 +749,6 @@ function handle_softkey_9_pfd_only()
 -- === Softkey 10 PFD_Only === ====================================================================
 function handle_softkey_10_pfd_only()
 
-        --highlight_softkey_flash(10) -- 🔵 This line triggers the flash
-
     -- PFD_Only - Page 1: PFD Only Default  ----------------------    
         if mode_fs == "PFD_Only" and PFD_Only_current_page == 12 then           
             set_page(1)  
@@ -782,8 +762,6 @@ function handle_softkey_10_pfd_only()
 -- === Softkey 11 PFD_Only=== ====================================================================
 function handle_softkey_11_pfd_only()
 
-        -- highlight_softkey_flash(11) -- 🔵 This line triggers the flash
- 
         -- PFD_Only - Back - Page 1: PFD Only Default ----------------------    
             if mode_fs == "PFD_Only" and  ((PFD_Only_current_page == 2 and gal_rem_select == 1) or
                                            (PFD_Only_current_page == 3 and gal_rem_select == 1) or
@@ -832,7 +810,6 @@ function handle_softkey_11_pfd_only()
 
 -- === Softkey 12 PFD_Only === ====================================================================
 function handle_softkey_12_pfd_only()
-
 
         print("***Key 12***")
         prt_console()

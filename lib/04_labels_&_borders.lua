@@ -1,4 +1,4 @@
--- === Global Label Elementses === ====================================================================
+-- === Global Label Elements === ====================================================================
 softkey_label_elements = {}  -- This holds 12 text label handles
 
 for i = 1, 12 do

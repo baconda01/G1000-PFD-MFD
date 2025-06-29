@@ -18,6 +18,7 @@ softkey_btn_1 = button_add(
         elseif mode_fs == "MFD" then
             handle_softkey_1_mfd()
         end
+        highlight_softkey_flash(1) -- 🔵 This line triggers the flash
     end
 )
 -- === Softkey 2 ===
@@ -33,6 +34,7 @@ softkey_btn_2 = button_add(
         elseif mode_fs == "MFD" then
             handle_softkey_2_mfd()
         end
+        highlight_softkey_flash(2) -- 🔵 This line triggers the flash
     end
 )
 -- === Softkey 3 ===
@@ -48,6 +50,7 @@ softkey_btn_3 = button_add(
         elseif mode_fs == "MFD" then
             handle_softkey_3_mfd()
         end
+        highlight_softkey_flash(3) -- 🔵 This line triggers the flash
     end
 )
 -- === Softkey 4 ===
@@ -63,6 +66,7 @@ softkey_btn_4 = button_add(
         elseif mode_fs == "MFD" then
             handle_softkey_4_mfd()
         end
+        highlight_softkey_flash(4) -- 🔵 This line triggers the flash
     end
 )
 -- === Softkey 5 ===
@@ -78,6 +82,7 @@ softkey_btn_5 = button_add(
         elseif mode_fs == "MFD" then
             handle_softkey_5_mfd()
         end
+        highlight_softkey_flash(5) -- 🔵 This line triggers the flash
     end
 )
 -- === Softkey 6 ===
@@ -93,6 +98,7 @@ softkey_btn_6 = button_add(
         elseif mode_fs == "MFD" then
             handle_softkey_6_mfd()
         end
+        highlight_softkey_flash(6) -- 🔵 This line triggers the flash
     end
 )
 -- === Softkey 7 ===
@@ -108,6 +114,7 @@ softkey_btn_7 = button_add(
         elseif mode_fs == "MFD" then
             handle_softkey_7_mfd()
         end
+        highlight_softkey_flash(7) -- 🔵 This line triggers the flash
     end
 )
 -- === Softkey 8 ===
@@ -123,6 +130,7 @@ softkey_btn_8 = button_add(
         elseif mode_fs == "MFD" then
             handle_softkey_8_mfd()
         end
+        highlight_softkey_flash(8) -- 🔵 This line triggers the flash
     end
 )
 -- === Softkey 9 ===
@@ -138,6 +146,7 @@ softkey_btn_9 = button_add(
         elseif mode_fs == "MFD" then
             handle_softkey_9_mfd()
         end
+        highlight_softkey_flash(9) -- 🔵 This line triggers the flash
     end
 )
 -- === Softkey 10 ===
@@ -153,6 +162,7 @@ softkey_btn_10 = button_add(
         elseif mode_fs == "MFD" then
             handle_softkey_10_mfd()
         end
+        highlight_softkey_flash(10) -- 🔵 This line triggers the flash
     end
 )
 -- === Softkey 11 ===
@@ -168,6 +178,7 @@ softkey_btn_11 = button_add(
         elseif mode_fs == "MFD" then
             handle_softkey_11_mfd()
         end
+        highlight_softkey_flash(11) -- 🔵 This line triggers the flash
     end
 )
 -- === Softkey 12 ===
@@ -183,6 +194,7 @@ softkey_btn_12 = button_add(
         elseif mode_fs == "MFD" then
             handle_softkey_12_mfd()
         end
+        highlight_softkey_flash(12) -- 🔵 This line triggers the flash
     end
 )
 
