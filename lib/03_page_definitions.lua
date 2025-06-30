@@ -3,7 +3,17 @@
 -- Forward declarations
 function draw_page_PFD_Only_1() end
 function draw_page_PFD_Only_2() end
--- ... up to 12
+function draw_page_PFD_Only_3() end
+function draw_page_PFD_Only_4() end
+function draw_page_PFD_Only_5() end
+function draw_page_PFD_Only_6() end
+function draw_page_PFD_Only_7() end
+function draw_page_PFD_Only_8() end
+function draw_page_PFD_Only_9() end
+function draw_page_PFD_Only_10() end
+function draw_page_PFD_Only_11() end
+function draw_page_PFD_Only_12() end
+
 
 -- === Dispatch Table === ======================================================================================
 
@@ -44,7 +54,55 @@ function draw_page_PFD_Only_2()
     -- TODO: Add visual drawing code
 end
 
--- Repeat up to draw_page_PFD_Only_12()
+function draw_page_PFD_Only_3()
+    print("🟢 draw_page_PFD_Only_3() was called")
+    -- TODO: Add visual drawing code
+end
+
+function draw_page_PFD_Only_4()
+    print("🟢 draw_page_PFD_Only_4() was called")
+    -- TODO: Add visual drawing code
+end
+
+function draw_page_PFD_Only_5()
+    print("🟢 draw_page_PFD_Only_5() was called")
+    -- TODO: Add visual drawing code
+end
+
+function draw_page_PFD_Only_6()
+    print("🟢 draw_page_PFD_Only_6() was called")
+    -- TODO: Add visual drawing code
+end
+
+function draw_page_PFD_Only_7()
+    print("🟢 draw_page_PFD_Only_7() was called")
+    -- TODO: Add visual drawing code
+end
+
+function draw_page_PFD_Only_8()
+    print("🟢 draw_page_PFD_Only_8() was called")
+    -- TODO: Add visual drawing code
+end
+
+function draw_page_PFD_Only_9()
+    print("🟢 draw_page_PFD_Only_9() was called")
+    -- TODO: Add visual drawing code
+end
+
+function draw_page_PFD_Only_10()
+    print("🟢 draw_page_PFD_Only_10() was called")
+    -- TODO: Add visual drawing code
+end
+
+function draw_page_PFD_Only_11()
+    print("🟢 draw_page_PFD_Only_11() was called")
+    -- TODO: Add visual drawing code
+end
+
+function draw_page_PFD_Only_12()
+    print("🟢 draw_page_PFD_Only_12() was called")
+    -- TODO: Add visual drawing code
+end
 
 
 

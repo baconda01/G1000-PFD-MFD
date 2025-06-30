@@ -1,10 +1,137 @@
 --print("10_softkeys_pfd_only.lua loaded")
 
+softkey_handlers.PFD_Only = {}
+
+-- === Softkey 1 ===
+softkey_handlers.PFD_Only[1] = function()
+    print("🟦 Softkey 1 → Page 2")
+    engine_select = 2
+    lean_select = 1
+    system_select = 1
+    set_page(2)
+end
+
+-- === Softkey 2 ===
+softkey_handlers.PFD_Only[2] = function()
+    print("🟩 Softkey 2 → Page 3")
+    engine_select = 1
+    lean_select = 2
+    system_select = 1
+    set_page(3)
+end
+
+-- === Softkey 3 ===
+softkey_handlers.PFD_Only[3] = function()
+    print("🟥 Softkey 3 → Page 4")
+    engine_select = 1
+    lean_select = 1
+    system_select = 2
+    set_page(4)
+end
+
+-- === Softkey 4 ===
+softkey_handlers.PFD_Only[4] = function()
+    print("🟨 Softkey 4 → Page 12")
+    set_page(12)
+end
+
+-- === Softkey 5 ===
+softkey_handlers.PFD_Only[5] = function()
+    print("🟪 Softkey 5 → Page 14")
+    wind_off = 1
+    wind_option_1 = 1
+    wind_option_2 = 1
+    wind_option_3 = 2
+    set_page(14)
+end
+
+-- === Softkey 6 ===
+softkey_handlers.PFD_Only[6] = function()
+    print("🟫 Softkey 6 → Page 5")
+    assist_select = 2
+    set_page(5)
+end
+
+-- === Softkey 7 ===
+softkey_handlers.PFD_Only[7] = function()
+    print("⬛ Softkey 7 → Page 13")
+    pathways_select = 1
+    terrain_select = 1
+    hdg_lbl_select = 1
+    set_page(13)
+end
+
+-- === Softkey 8 ===
+softkey_handlers.PFD_Only[8] = function()
+    print("⬜ Softkey 8 → Page 16")
+    set_page(16)
+end
+
+-- === Softkey 9 ===
+softkey_handlers.PFD_Only[9] = function()
+    print("🔵 Softkey 9 → Page 1")
+    set_page(1)
+end
+
+-- === Softkey 10 ===
+softkey_handlers.PFD_Only[10] = function()
+    print("🟠 Softkey 10 → Page 15")
+    set_page(15)
+end
+
+-- === Softkey 11 ===
+softkey_handlers.PFD_Only[11] = function()
+    print("🔴 Softkey 11 → Page 11")
+    set_page(11)
+end
+
+-- === Softkey 12 ===
+softkey_handlers.PFD_Only[12] = function()
+    print("🟣 Softkey 12 → Page 8")
+    set_page(8)
+end
+
+
+
+--[[
+softkey_handlers.PFD_Only = {
+    [1] = {
+        [1]  = function() 
+            engine_select = 2
+            lean_select = 1
+            system_select = 1
+            set_page(2) end,
+      --  [3]  = function() set_page(2) end,
+      --  [4]  = function() set_page(2) end,
+        [2]  = function()
+            if lean_select == 2 then
+                engine_select = 2
+                lean_select = 1
+                system_select = 1
+            end
+        end
+    },
+
+    [2] = {
+        [2] = function() 
+            if engine_select == 2 then
+                engine_select = 1
+                lean_select = 2
+                system_select = 1
+            end
+        end
+    }
+}
+]]
+
+
 
 -- === Softkey 1 PFD_Only === ====================================================================
 
+
+--[[
 -- === Softkey 1 handler for PFD_Only mode ===
-softkey_handlers.PFD_Only[1] = function()
+softkey_handlers.PFD_Only[1] = function(index)
     if PFD_Only_current_page == 1 or
        PFD_Only_current_page == 3 or
        PFD_Only_current_page == 4 or
@@ -12,42 +139,45 @@ softkey_handlers.PFD_Only[1] = function()
        PFD_Only_current_page == 11 then
 
         engine_select = 2
-        lean_select = 1
+          lean_select = 1
         system_select = 1
         set_page(2)
     else
-        print("Softkey 1 pressed, but page not valid.")
+        print("Softkey 1 pressed, but page not valid. Option 1")
     end
+    print("***Key 1***")
+    prt_console()
 end
 
---[[
 
+softkey_handlers.PFD_Only[1] = function()
+    if PFD_Only_current_page == 2 and
+                 lean_select == 2 then
 
-function handle_softkey_1_pfd_only()
-
-    --print("=== Softkey 1 PFD_Only")
-
-
-
-
-    -- PFD_Only - Page 2: Engine --------------------------------
-    if mode_fs == "PFD_Only" and (PFD_Only_current_page == 1 or
-                                    PFD_Only_current_page == 3 or
-                                    PFD_Only_current_page == 4 or 
-                                    PFD_Only_current_page == 5 or
-                                    PFD_Only_current_page == 11) then
         engine_select = 2
-            lean_select = 1
+        lean_select = 1
         system_select = 1
-        set_page(2)
-        
+
+    else
+        print("Softkey 1 pressed, but page not valid. Option 2")
+    end
+    print("***Key 1***")
+    prt_console()
+end
+]]
+
+
+
+--[[        
     -- PFD_Only - Page 7: Layout - Map Off ----------------------  
-    elseif mode_fs == "PFD_Only" and PFD_Only_current_page == 6 then   
+    if mode_fs == "PFD_Only" and PFD_Only_current_page == 6 then   
             map_off_select = 2
         insert_map_select = 1
             HSI_map_select = 1
         set_page(7)
         
+
+
     elseif mode_fs == "PFD_Only" and PFD_Only_current_page == 7 and
                                         (insert_map_select == 2 or 
                                             HSI_map_select == 2) then   
@@ -55,18 +185,27 @@ function handle_softkey_1_pfd_only()
         insert_map_select = 1
             HSI_map_select = 1
                     
+
+
     elseif mode_fs == "PFD_Only" and PFD_Only_current_page == 10 and
                                         (insert_map_select == 2 or 
                                             HSI_map_select == 2) then
         set_page(7)        
         
+
+
+
     -- PFD_Only - Page 8: Code -------------------------------------
     elseif mode_fs == "PFD_Only" and PFD_Only_current_page == 8 then
         handle_code_entry()   
         
+
+
     -- PFD_Only - Page 13: SVT ------------------------------------  
     elseif mode_fs == "PFD_Only" and PFD_Only_current_page == 12 then
         set_page(13) 
+
+
 
     elseif mode_fs == "PFD_Only" and PFD_Only_current_page == 13 and
                                             pathways_select == 1 and
@@ -75,6 +214,8 @@ function handle_softkey_1_pfd_only()
         pathways_select = 2
             terrain_select = 1 
             hdg_lbl_select = 1 
+
+
 
     elseif mode_fs == "PFD_Only" and PFD_Only_current_page == 13 and
                                             pathways_select == 2 and
@@ -85,6 +226,7 @@ function handle_softkey_1_pfd_only()
             hdg_lbl_select = 1 
         
     
+
     elseif mode_fs == "PFD_Only" and PFD_Only_current_page == 13 and
                                             pathways_select == 2 and
                                             terrain_select == 1 and
@@ -92,6 +234,8 @@ function handle_softkey_1_pfd_only()
         pathways_select = 1
             terrain_select = 1 
             hdg_lbl_select = 2 
+
+
 
     elseif mode_fs == "PFD_Only" and PFD_Only_current_page == 13 and
                                             pathways_select == 1 and
@@ -109,6 +253,8 @@ function handle_softkey_1_pfd_only()
             terrain_select = 2
             hdg_lbl_select = 2
 
+
+
     elseif mode_fs == "PFD_Only" and PFD_Only_current_page == 13 and
                                             pathways_select == 2 and
                                             terrain_select == 2 and
@@ -116,6 +262,8 @@ function handle_softkey_1_pfd_only()
         pathways_select = 3
             terrain_select = 2
             hdg_lbl_select = 3
+
+
 
     elseif mode_fs == "PFD_Only" and PFD_Only_current_page == 13 and
                                             pathways_select == 3 and
@@ -125,6 +273,8 @@ function handle_softkey_1_pfd_only()
             terrain_select = 2
             hdg_lbl_select = 2
 
+
+
     elseif mode_fs == "PFD_Only" and PFD_Only_current_page == 13 and
                                             pathways_select == 3 and
                                             terrain_select == 2 and
@@ -133,6 +283,8 @@ function handle_softkey_1_pfd_only()
             terrain_select = 2
             hdg_lbl_select = 3
 
+
+
     elseif mode_fs == "PFD_Only" and PFD_Only_current_page == 13 and
                                             pathways_select == 3 and
                                             terrain_select == 1 and
@@ -140,6 +292,8 @@ function handle_softkey_1_pfd_only()
         pathways_select = 4
             terrain_select = 1
             hdg_lbl_select = 3
+
+
 
     elseif mode_fs == "PFD_Only" and PFD_Only_current_page == 13 and
                                             pathways_select == 4 and
@@ -149,6 +303,8 @@ function handle_softkey_1_pfd_only()
             terrain_select = 1
             hdg_lbl_select = 3
 
+
+
     elseif mode_fs == "PFD_Only" and PFD_Only_current_page == 13 and
                                             pathways_select == 3 and
                                             terrain_select == 1 and
@@ -156,6 +312,8 @@ function handle_softkey_1_pfd_only()
         pathways_select = 4
             terrain_select = 1
             hdg_lbl_select = 4
+
+
 
     elseif mode_fs == "PFD_Only" and PFD_Only_current_page == 13 and
                                             pathways_select == 4 and
@@ -172,9 +330,30 @@ function handle_softkey_1_pfd_only()
     print("***Key 1***")
     prt_console()
 end
+
 ]]
 
+--[[
 -- === Softkey 2 === ====================================================================
+
+softkey_handlers.PFD_Only[2] = function(index)
+    if PFD_Only_current_page == 2 and
+              (engine_select == 2 or
+               system_select == 2) then
+
+        engine_select = 1
+          lean_select = 2
+        system_select = 1
+
+    else
+        print("Softkey 2 pressed, but page not valid. Option 3")
+    end
+    print("***Key 1***")
+    prt_console()
+end
+]]
+
+--[[
 function handle_softkey_2_pfd_only()
 
     -- PFD_Only - Page 3: Lean - Assist OFF----------------------*
@@ -392,7 +571,8 @@ function handle_softkey_2_pfd_only()
     print("***Key 2***")
     prt_console()
 end
-
+ 
+]]
 
 -- === Softkey 3 PFD_Only === ====================================================================
 function handle_softkey_3_pfd_only()

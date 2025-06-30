@@ -57,7 +57,7 @@ softkey_handlers = {
 function prt_console()
    -- print("*** System Status ***")
     print(
-        "mode_fs: " .. tostring(mode_fs),
+    --    "mode_fs: " .. tostring(mode_fs),
         "PFD Current Page: "      .. tostring(PFD_current_page),
         "MFD Current Page: "      .. tostring(MFD_current_page), 
         "PFD_Only Current Page: "   .. tostring(PFD_Only_current_page),
@@ -71,4 +71,4 @@ function prt_console()
     
     print("----------------------")
 end
-prt_console()
+--prt_console()

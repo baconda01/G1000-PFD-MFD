@@ -80,10 +80,10 @@ function update_light_logic()
        ((pathways_select == 2 or pathways_select == 4) and PFD_Only_current_page == 13) or          -- PFD_Only - Page 13: SVT    - Pathways - LIGHT
        (traffic_select == 2 and MFD_current_page == 6) then                                         -- MFD      - Page 6: MAP/HSI - Traffic  - LIGHT
         light[1] = "______"
-        print("=== draw_softkeys_ON")
+       -- print("=== draw_softkeys_ON")
     else
         light[1] = ""
-        print("=== draw_softkeys_OFF")
+       -- print("=== draw_softkeys_OFF")
     end
 
     -- Label Light 2 ------------------------------------------------------------------------------
@@ -95,10 +95,10 @@ function update_light_logic()
         (terrain_select == 2 and PFD_Only_current_page == 13) or                                    -- PFD_Only - Page 13: SVT   - Terrain     - LIGHT
         (wind_off == 2 and PFD_Only_current_page == 14) then                                        -- PFD_Only - Page 14: Wind  - Off         - LIGHT
         light[2] = "______"
-        print("=== draw_softkeys_ON")
+       -- print("=== draw_softkeys_ON")
     else
         light[2] = ""
-        print("=== draw_softkeys_OFF")
+       -- print("=== draw_softkeys_OFF")
     end
 
     -- Label Light 3 ------------------------------------------------------------------------------
@@ -112,10 +112,10 @@ function update_light_logic()
         (standby_select == 2 and PFD_Only_current_page == 16) or                                    -- PFD_Only - Page 16: XPDR    - Standby  - LIGHT
         (wind_option_1 == 2 and PFD_Only_current_page == 14) then                                   -- PFD_Only - Page 14: Wind    - Option 2 - LIGHT
         light[3] = "______"
-        print("=== draw_softkeys_ON")
+       -- print("=== draw_softkeys_ON")
     else
         light[3] = ""
-        print("=== draw_softkeys_OFF")
+       -- print("=== draw_softkeys_OFF")
     end
     
     -- Label Light 4 ------------------------------------------------------------------------------  
@@ -124,10 +124,10 @@ function update_light_logic()
         (wind_option_2 == 2 and PFD_Only_current_page == 14) or                                     -- PFD_Only - Page 14: Wind    - Off  - LIGHT
         (topo_select == 2 and MFD_current_page == 6) then                                           -- MFD      - Page 6: MAP/HSI  - Topo - LIGHT
         light[4] = "______"
-        print("=== draw_softkeys_ON")
+       -- print("=== draw_softkeys_ON")
     else
         light[4] = ""
-        print("=== draw_softkeys_OFF")
+       -- print("=== draw_softkeys_OFF")
     end
 
     -- Label Light 5 ------------------------------------------------------------------------------
@@ -135,10 +135,10 @@ function update_light_logic()
         (alt_select == 2 and PFD_Only_current_page == 16) or                                        -- PFD_Only - Page 16: XPDR    - Alt      - LIGHT
         (wind_option_3 == 2 and PFD_Only_current_page == 14) then                                   -- PFD_Only - Page 14: Wind    - Option 1 - LIGHT
         light[5] = "______"
-        print("=== draw_softkeys_ON")
+       -- print("=== draw_softkeys_ON")
     else
         light[5] = ""
-        print("=== draw_softkeys_OFF")
+       -- print("=== draw_softkeys_OFF")
     end
 
     -- Label Light 6 ------------------------------------------------------------------------------
@@ -180,7 +180,6 @@ function update_light_logic()
     else
         light[10] = ""
     end
-    print("draw_softkeys")
 
 end
 
