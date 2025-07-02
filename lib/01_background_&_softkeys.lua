@@ -3,7 +3,8 @@
 
 
 -- === G1000 Background ===
-img_add_fullscreen("background.png")
+--img_add_fullscreen("background.png")
+img_add("background.png", 0, 0, 2560, 1600)
 
 
 -- === Display Softkeys ===

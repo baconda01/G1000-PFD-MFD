@@ -1,5 +1,8 @@
 --print("03_page_definitions.lua loaded")
 
+
+-- === Dispatch Table === ======================================================================================
+
 -- Forward declarations
 function draw_page_PFD_Only_1() end
 function draw_page_PFD_Only_2() end
@@ -15,8 +18,7 @@ function draw_page_PFD_Only_11() end
 function draw_page_PFD_Only_12() end
 
 
--- === Dispatch Table === ======================================================================================
-
+-- Dispatch Table
 PFD_Only_page_drawers = {
     [1]  = draw_page_PFD_Only_1,
     [2]  = draw_page_PFD_Only_2,

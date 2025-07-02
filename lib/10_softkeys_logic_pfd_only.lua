@@ -1,5 +1,16 @@
 --print("10_softkeys_pfd_only.lua loaded")
 
+for i = 1, 12 do
+    msfs_event("H:AS1000_PFD_Only_SOFTKEYS_" .. i, function()
+        print("🛰️ Event received from MSFS 2024: SOFTKEY " .. i)
+        if mode_fs == "PFD_Only" and softkey_handlers.PFD_Only[i] then
+            softkey_handlers.PFD_Only[i]()
+        else
+            print("⚠️ No handler for softkey " .. i .. " in mode " .. mode_fs)
+        end
+    end)
+end
+
 softkey_handlers.PFD_Only = {}
 
 -- === Softkey 1 ===
@@ -1020,5 +1031,6 @@ function handle_softkey_12_pfd_only()
         print("***Key 12***")
         prt_console()
     end
+
 
 
