@@ -1,9 +1,9 @@
 --print("01_background.lua loaded")
 
-
+--DAMON TEST
 
 -- === G1000 Background ===
-img_add_fullscreen("background.png")
+img_add_fullscreen("background.png")--, 0, 0, 2560, 1600)
 
 -- === Softkey 1 ===
 softkey_btn_1 = button_add(
